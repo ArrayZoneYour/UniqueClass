@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<head>
+    <meta charset="utf-8">
+    <title>你的个人空间</title>
+	<link href="__PUBLIC__/css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="__PUBLIC__/css/login_student.css">
+</head>
+<body>
+<div class="top">
+	<div class="top-box">
+	<!-- <?php dump($_SESSION); ?> -->
+		<h1 class="top-box-logo">个人空间</h1>
+		<div class="top-box-nav">
+			欢迎您！<!-- <a href="" onclick="javascript:if(confirm('开发中')){return true;}return false;">密码修改</a> --> <a href="__MODULE__/Index/logout">安全退出</a>
+		</div>
+	</div>
+</div>
+<div class="main">
+	<div class="main-right">
+		<div class="main-right-login">
+			<form method="post">
+			<table class="table">
+				<tr><th>学号：</th><td>
+					<input type="text" class="form-text" name="student_number">
+				</td></tr>
+				<tr><th>密 码：</th><td>
+					<input type="password" class="form-text" name="password">
+					<input type="hidden" name="student_name">
+				</td></tr>
+				<tr><td colspan="2" align="center">
+					<input type="submit" value="确认输入" class="form-btn" />
+					<input type="reset" value="重新填写" class="form-btn" />
+				</td></tr>
+			</table>
+			</form>
+		</div>
+	</div>
+	<div class="main-footer">
+		<div>学生成绩管理系统　@copyright 2016</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<include file="Index/header" />
+<h2 class="main-right-nav">教学系统 &gt; 成绩查看</h2>
+<div class="main-right-titbox">
+	<ul><li><a href="#">成绩查看</a></li></ul>
+</div>
+<form method="post">请选择学期
+	<select name="term">
+		<option value="1" <eq name="term" value="1">selected</eq>>2015第一学期</option>
+		<option value="2" <eq name="term" value="2">selected</eq>>2015第二学期</option>
+	</select>
+	请选择班级：
+	<select name="class_id">
+		<foreach name="major_info" item="v">
+			<foreach name="v.Class" item="vv">
+				<option value="{$vv.class_id}" <eq name="class_id" value="$vv.class_id">selected</eq>>{$v.major_name}{$vv.class_name}</option>
+			</foreach>
+		</foreach>
+	</select>
+	选择排序方式：
+	<select name="order_first" id="">
+		<!-- <option value="student_number">按学号排序</option> -->
+		<option value="score">按成绩排序</option>
+	</select>
+	<select name="order_second" id="">
+		<option value="asc">递增</option>
+		<option value="desc">递减</option>
+	</select>
+	<input type="submit" value="确定" class="form-btn" />
+</form>
+<table class="table">
+	<tr><th>学号</th><th>姓名</th><th>学期</th><th>科目</th><th>成绩</th><th>操作</th></tr>
+	<notempty name="score_info">
+		<foreach name="score_info" item="v">
+			<tr align="center">
+				<td>{$v.student_number}</td>
+				<td>{$v.student_name}</td>
+				<td>{$v.term}</td>
+				<td>{$v.subject_name}</td>
+				<td>{$v.score}</td>
+				<td><div align="center"><a href="__CONTROLLER__/update/student_number/{$v.student_number}">编辑</a>&nbsp; &nbsp;<a href="__CONTROLLER__/delete/student_number/{$v.student_number}/class_id/{$v.class_id}"  onclick="javascript:if(confirm('确定要删除此信息吗？')){return true;}return false;">删除</a></div></td>
+			</tr>
+		</foreach>
+		<else/>
+		<tr align="center"><td colspan="6">查询的结果不存在！</td></tr>
+	</notempty>
+</table>
+<!-- <div><a href="__CONTROLLER__/add/class_id/{$class_id}" class="main-right-tita">添加学生</a></div> -->
+<include file="Index/footer" />

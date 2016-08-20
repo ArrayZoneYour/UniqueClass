@@ -45,3 +45,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+/SQLdata
+/PHPExcel
+/PHPExcel_demo
+/Application/Runtime/

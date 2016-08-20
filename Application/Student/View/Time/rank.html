@@ -1,0 +1,124 @@
+<include file="Time/header" />
+<link rel="stylesheet" href="__PUBLIC__/css/student/rank.css">
+<div class="time-box">
+  <div class="clearfix">
+  	<div class="time-all">
+  	<h3>你当前自习总时间</h3>
+  	<em>{$me['sum']}小时</em>
+  </div>
+  <div class="sort">
+  	<p>你现在处于第{$num[0]['tp_count']+1}位</p>
+  </div>
+  </div>
+  <div class="time-sort">
+  	<div class="left-btn"></div>
+  	<div class="right-btn"></div>
+  	<div class="line" style="width:1500px;">
+  		<ul class="clearfix">
+  			<li>
+  				<div class="item-wrap">
+  					<div class="forward-status-icon normal">
+  						<div class="icon-bg"></div>
+  						<i class="o"></i>
+  					</div>
+  					<div class="timeNum">{$other[0]['sum']}</div>
+  					<div class="user-pic">
+  						<a href="">
+  							<img src="__PUBLIC__/images/images_student/default/default.png" alt="">
+  						</a>
+  					</div>
+  					<div class="username">
+  						<a href="">{$other[0]['student_name']}</a>
+  					</div>
+  				</div>
+  			</li>
+  			<li>
+  				<div class="item-wrap">
+  					<div class="forward-status-icon normal">
+  						<div class="icon-bg"></div>
+  						<i class="o"></i>
+  					</div>
+  					<div class="timeNum">{$other[1]['sum']}</div>
+  					<div class="user-pic">
+  						<a href="">
+  							<img src="__PUBLIC__/images/images_student/default/default.png" alt="">
+  						</a>
+  					</div>
+  					<div class="username">
+  						<a href="">{$other[1]['student_name']}</a>
+  					</div>
+  				</div>
+  			</li>
+  			<li>
+  				<div class="item-wrap">
+  					<div class="forward-status-icon normal">
+  						<div class="icon-bg"></div>
+  						<i class="o"></i>
+  					</div>
+  					<div class="timeNum">{$other[2]['sum']}</div>
+  					<div class="user-pic">
+  						<a href="">
+  							<img src="__PUBLIC__/images/images_student/default/default.png" alt="">
+  						</a>
+  					</div>
+  					<div class="username">
+  						<a href="">{$other[2]['student_name']}</a>
+  					</div>
+  				</div>
+  			</li>
+  			<li>
+  				<div class="item-wrap">
+  					<div class="forward-status-icon normal">
+  						<div class="icon-bg"></div>
+  						<i class="o"></i>
+  					</div>
+  					<div class="timeNum">{$other[3]['sum']}</div>
+  					<div class="user-pic">
+  						<a href="">
+  							<img src="__PUBLIC__/images/images_student/default/default.png" alt="">
+  						</a>
+  					</div>
+  					<div class="username">
+  						<a href="">{$other[3]['student_name']}</a>
+  					</div>
+  				</div>
+  			</li>
+  			<li>
+  				<div class="item-wrap">
+  					<div class="forward-status-icon normal">
+  						<div class="icon-bg"></div>
+  						<i class="o"></i>
+  					</div>
+  					<div class="timeNum">{$other[4]['sum']}</div>
+  					<div class="user-pic">
+  						<a href="">
+  							<img src="__PUBLIC__/images/images_student/default/default.png" alt="">
+  						</a>
+  					</div>
+  					<div class="username">
+  						<a href="">{$other[4]['student_name']}</a>
+  					</div>
+  				</div>
+  			</li>
+  			<li class="active">
+  				<div class="item-wrap">
+  					<div class="forward-status-icon normal">
+  						<div class="icon-bg"></div>
+  						<i class="o_blue"></i>
+  					</div>
+  					<div class="timeNum">{$me['sum']}</div>
+  					<div class="user-pic">
+  						<a href="">
+  							<img src="__PUBLIC__/images/images_student/default/default.png" alt="">
+  						</a>
+  					</div>
+  					<div class="username">
+  						<a href="">{$me['student_name']}<?php dump($num); ?></a>
+  					</div>
+  				</div>
+  			</li>
+  		</ul>
+  	</div>
+  </div>
+</div>
+<include file="Time/footer" />

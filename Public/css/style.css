@@ -1,0 +1,56 @@
+/*默认样式表*/
+body,h1{margin:0;padding:0;}
+body,input,select{font-family:'Microsoft YaHei';color: #333;}
+
+.top-box,.main{width:98%;max-width:1100px;}
+
+.top{background: #358edd;height:40px;}
+.top-box{margin:0 auto;position: relative;min-width:390px;}
+.top-box-logo{font-size:18px;font-weight:normal;color:#fff;position:absolute;left:0;top:7px;letter-spacing:1px;}
+.top-box-nav{text-align:right;color: #fff;line-height:40px;font-size:11px;letter-spacing:3px;}
+.top-box-nav a{color: #fff;margin-left: 5px;text-decoration: underline;}
+
+.main{margin:10px auto 0 auto;font-size:12px;}
+.main a{color:#185697;text-decoration:none;}
+
+.main-left{width:140px;float:left;border-top:#0080c4 4px solid;}
+.main-left-nav{border:#bdd7f2 1px solid;border-bottom:#0080c4 4px solid;background: #ebf7ff url(./../images/leftdhbg.jpg) repeat-y right;margin-left:10px;margin-bottom:20px;}
+.main-left-nav-head{border-bottom:1px #98c9ee solid;display: block;text-align: center;position: relative;height:38px;line-height:38px;}
+.main-left-nav-head div{position:absolute;background: url(./../images/leftbgbt2.jpg) no-repeat;width: 11px;height:48px;left:-11px;top:-1px;}
+.main-left-nav a{display:block;background:#fff;line-height:28px;height:28px;text-align:center;border-bottom:1px #98c9ee dotted;}
+.main-left-nav a:hover{background:#0080c4;color:#fff;}
+
+.main-footer{clear:both;text-align: center;padding-top:20px;}
+.main-footer div{border-top:1px #ddd solid;line-height:26px;padding-top:15px;}
+
+.main-right{margin-left:155px;}
+.main-right-login{padding-top:60px;}
+.main-right-login table{width:500px;margin:0 auto;}
+.main-right-login th{width:20%;text-align:left;}
+.main-right-login td{width:80%;}
+
+.main-right-index {padding-top:15px;}
+.main-right-index h1{text-indent:20px;font-size: 1.5em;}
+
+.main-right-nav{color: #185697;font-size: 12px;margin-bottom: 10px;font-weight: 100;border-bottom: 1px #ddd dotted;line-height: 30px;}
+.main-right-titbox{background: url(./../images/bg_n.jpg) repeat-x bottom;overflow: hidden;padding: 20px 0 0 0;margin-bottom:15px;}
+.main-right-titbox ul{list-style: none;margin:0;padding:0;}
+.main-right-titbox ul{float: left;cursor: pointer;line-height: 35px;}
+.main-right-titbox a{text-align: center;display: block;padding: 0 15px;background: #fff url(./../images/bgnav.jpg) repeat-x;font-weight: 700;overflow: hidden;border: 1px #1573b4 solid;border-bottom: 0;position: relative;bottom: -1px;font-size: 14px;color: #fff;}
+.main-right-titsel{margin-bottom:15px;}
+.main-right-tita:hover{color:#ff0000;}
+
+.main-right-table table{width:500px;}
+.main-right-table th{text-align:left;}
+
+.main-right-addAll .form-text{width:150px;}
+
+.table,.table th,.table td{border:1px solid #cfe1f9;}
+.table{border-bottom:#cfe1f9 solid 4px;border-collapse:collapse;line-height:38px;width:100%;margin:15px auto;}
+.table th{background:#eef7fc;color: #185697;padding:0 6px;}
+.table td{padding:0 12px;}
+.table tr:hover{background:#f5fcff;}
+.table-major{background:#fff;}
+
+.form-btn{height: 26px;border: 1px #949494 solid;padding: 0 10px;cursor: pointer;background:#fff;margin-right:10px;}
+.form-text{border-top: 1px #999 solid;border-left: 1px #999 solid;border-bottom: 1px #ddd solid;border-right: 1px #ddd solid;padding: 3px;line-height: 18px;font-size: 13px;width:200px;}

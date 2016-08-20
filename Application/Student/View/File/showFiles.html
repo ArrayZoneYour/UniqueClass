@@ -1,0 +1,28 @@
+<include file="Time/header" />
+<link rel="stylesheet" href="__PUBLIC__/css/student/upload.css">
+<div class="titbox">
+	<ul><li><a href="#">资料列表</a></li></ul>
+</div>
+<div class="main-table">
+<table class="table">
+	<tr><th>文件名</th><th>上传时间</th><th>上传人</th><th>链接</th><!-- <th>下载（浏览量）</th> --></tr>
+	<notempty name="files_info">
+		<foreach name="files_info" item="v">
+			<tr align="center">
+				<td>{$v.filename}</td>
+				<td>{$v.createtime|date='Y年m月d日 H:i:s',###}</td>
+				<!-- <td>{$v.viewnum}</td> -->
+				<td>{$v.owner}</td>
+				<td><a href="__PUBLIC__{$v.filepath}">链接</a></td>
+			</tr>
+		</foreach>
+		<else/>
+		<tr align="center"><td colspan="4">查询的结果不存在！</td></tr>
+	</notempty>
+</table>
+<div class="submit">
+	<button class="form-btn"><a href="__MODULE__/File/upload">共享我的资料</a></button>
+</div>
+</div>
+<div class="blank"></div>
+<include file="Time/footer" />

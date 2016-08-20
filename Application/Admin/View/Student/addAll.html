@@ -1,0 +1,55 @@
+<include file="Index/header" />
+<h2 class="main-right-nav">学生管理 &gt; 批量添加</h2>
+<div class="main-right-addAll">
+	<form method="post">
+	<table class="table">
+		<tr>
+			<th>学号</th><th>姓名</th><th>出生年月</th><th>性别</th><th>所属班级</th><th width="60">操作</th>
+		</tr>
+		<tr align="center" class="js-student">
+			<!--学号-->
+			<td><input type="text" class="form-text" name="student_number[]"></td>
+			<!--姓名-->
+			<td><input type="text" class="form-text" name="student_name[]">
+			<!--出生年月-->
+			<td><input type="text" class="form-text" name="student_birthday[]"></td>
+			<!--性别-->
+			<td><select name="student_gender[]">
+				<option value="男">男</option>
+				<option value="女">女</option>
+			</select></td>
+			<!--所属班级-->
+			 <td><select name="class_id[]">
+				<foreach name="major_info" item="v">
+					<foreach name="v.Class" item="vv">
+						<option value="{$vv.class_id}">{$v.major_name}{$vv.class_name}</option>
+					</foreach>
+				</foreach>
+			</select></td>
+			<td><img id="append" src="__PUBLIC__/images/append.png" /> <img id="remove" src="__PUBLIC__/images/remove.png" /></td>
+		</tr>
+		<tr>
+			<td colspan="6" align="center">
+				<input type="submit" value="确认输入" class="form-btn">
+				<input type="reset" value="重新填写" class="form-btn">
+				<button class="form-btn"><a href="__MODULE__/Student/import_excel">从Excel中导入</a></button>
+			</td>
+		</tr>
+	</table>
+	</form>
+</div>
+<style>#append,#remove{cursor:pointer;vertical-align:middle}</style>
+<script src="__PUBLIC__/js/jquery.min.js"></script>
+<script>
+	$("#append").click(function(){
+		tr = $(this).parents("tr");
+		tr.clone(true).insertAfter(tr);
+	});
+	$("#remove").click(function(){
+		if( $(".js-student").length > 1){
+			tr = $(this).parents("tr");
+			$(tr).remove();
+		}
+	});
+</script>
+<include file="Index/footer" />

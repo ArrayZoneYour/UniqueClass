@@ -1,0 +1,45 @@
+<include file="Index/header" />
+<h2 class="main-right-nav">学生管理 &gt; 学生修改</h2>
+<div class="main-right-table">
+	<form method="post">
+	<input type="hidden" name="student_id" value="{$student_info.student_id}"/>
+	<table class="table">
+		<tr>
+			<th>学号：</th>
+			<td><input value="{$student_info.student_number}" type="text" class="form-text" name="student_number" required></td>
+		</tr>
+		<tr>
+			<th>姓名：</th>
+			<td><input value="{$student_info.student_name}" type="text" class="form-text" name="student_name" required></td>
+		</tr>
+		<tr>
+			<th>出生年月：</th>
+			<td><input value="{$student_info.student_birthday}" type="text" class="form-text" name="student_birthday" required></td>
+		</tr>
+		<tr>
+			<th>性别：</th><td><select name="student_gender">
+				<option value="男" <eq name="student_info.student_gender" value="男">selected</eq> >男</option>
+				<option value="女" <eq name="student_info.student_gender" value="女">selected</eq> >女</option>
+			</select></td>
+		</tr>
+		<tr>
+			<th>所属班级：</th><td><select name="class_id">
+				<foreach name="major_info" item="v">
+					<foreach name="v.Class" item="vv">
+						<option value="{$vv.class_id}" <eq name="student_info.class_id" value="$vv.class_id">selected</eq>>{$v.major_name}{$vv.class_name}</option>
+					</foreach>
+				</foreach>
+			</select></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<input type="submit" value="确认更新" class="form-btn">
+				<input type="reset" value="重新填写" class="form-btn">
+			</td>
+		</tr>
+	</table>
+	</form>
+	
+<?php dump($data); ?>
+</div>
+<include file="Index/footer" />

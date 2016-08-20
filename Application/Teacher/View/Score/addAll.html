@@ -1,0 +1,56 @@
+<include file="Index/header" />
+<h2 class="main-right-nav">教学系统 &gt; 批量录入</h2>
+<div class="main-right-addAll">
+	<form method="post">
+	2015第一学期
+	请选择班级：
+	<select name="class_id">
+				<foreach name="major_info" item="v">
+					<foreach name="v.Class" item="vv">
+					<option value="{$vv.class_id}" <eq name="class_id" value="$vv.class_id">selected</eq>>{$v.major_name}{$vv.class_name}</option>
+				</foreach>
+			</foreach>
+	</select>
+	<input type="hidden" name="subject_id" value={$subject_id}>
+	<input type="submit" value="确定" class="form-btn" />
+	</form>
+	<form method="post">
+	<table class="table">
+		<tr>
+			<th>学号</th><th>成绩</th><th width="60">操作</th>
+		</tr>
+		<foreach name="score_info" item="v">
+			<tr align="center" class="js-student">
+			<input type="hidden" name="subject_id[]" value={$subject_id}>
+			<input type="hidden" name="term[]" value=1>
+				<!--学号-->
+				<td><input type="text" class="form-text" name="student_number[]" value={$v.student_number}></td>
+				<!--微积分-->
+				<td><input type="text" class="form-text" name="score[]">
+				<td><img id="append" src="__PUBLIC__/images/append.png" /> <img id="remove" src="__PUBLIC__/images/remove.png" /></td>
+			</tr>
+		</foreach>
+		<tr>
+			<td colspan="7" align="center">
+				<input type="submit" value="确认输入" class="form-btn">
+				<input type="reset" value="重新填写" class="form-btn">
+			</td>
+		</tr>
+	</table>
+	</form>
+</div>
+<style>#append,#remove{cursor:pointer;vertical-align:middle}</style>
+<script src="__PUBLIC__/js/jquery.min.js"></script>
+<script>
+	$("#append").click(function(){
+		tr = $(this).parents("tr");
+		tr.clone(true).insertAfter(tr);
+	});
+	$("#remove").click(function(){
+		if( $(".js-student").length > 1){
+			tr = $(this).parents("tr");
+			$(tr).remove();
+		}
+	});
+</script>
+<include file="Index/footer" />

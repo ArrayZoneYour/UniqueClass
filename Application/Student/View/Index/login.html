@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="__PUBLIC__/css/student/login.css">
+    <title>登录|追梦者^.^</title>
+    
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/dialog/layer.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/dialog.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/student/login.js"></script>
+	
+</head>
+<body>
+    <div id="login_bg" class ="login_bg" style="background-image:url(__PUBLIC__/images/images_student/login/20.jpg);"></div>
+    <div class="login_header">
+    	<span></span>
+    </div>
+    
+    <div class="container">
+    	<div class="form_header">
+        	<h1 id="logo">寻梦人之地</h1>
+			<h2 id="subheading">学生登录</h2>
+        </div>
+        <div class="signup_forms" class="signup_forms">
+            	<div id="signup_forms_container" class="signup_forms_container">
+                    	<form class="signup_form_form" id="sign_form" method="post">
+                        	<div class="signup_account" id="signup_account">
+                            	<div class="form_user">	
+        							<input type="text" name="student_number" placeholder="学号" id="signup_student_number">
+                                </div>
+                                <div class="form_password">
+           							<input type="password" name="password" placeholder="密码" id="signup_password">
+        						</div>
+                            </div>
+                        </form>
+                </div>
+                <div>
+   					 <button type="button" id="signup_forms_submit" onclick="login.check()"><span><strong>登录</strong></span></button>
+   					 <div id="errormsg"></div>
+   					 <div id="rightmsg"></div>
+                </div>
+    	</div>
+    <div class="footer">
+    	<div class="footer_signup_link">
+        	<a class="signup_link" href="#">注册（未开放）</a>
+            <a href="#" target="_blank" class="link unnamed_1">意见反馈</a>
+            <a href="#" target="_blank" class="link unnamed_2">关于</a>
+        </div>
+        <div class="design_show">
+        	<div class="designer_info">
+            	<a href="#">Designed by <strong>SnowFly</strong></a>
+                <a href="#" class="snow"><img id="snow" src="__PUBLIC__/images/snow.jpeg" alt="designed by SnowFly"/></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

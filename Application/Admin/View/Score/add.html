@@ -1,0 +1,27 @@
+<include file="Index/header" />
+<h2 class="main-right-nav">教学系统 &gt; 成绩录入</h2>
+<div class="main-right-table">
+	<form method="post">
+	<table class="table">
+		<tr>
+			<th>学号：</th><td><input type="text" class="form-text" name="student_number" value="{$score_info.student_number}" required></td>
+		</tr>
+		<tr>
+			<th>请选择科目：</th>
+			<td><select name="subject_id">
+				<foreach name="subject_info" item="v">
+					<option value="{$v.subject_id}" <eq name="subject_id" value="$v.subject_id">selected</eq>>{$v.subject_name}</option>
+				</foreach>
+			</select></td>
+		</tr>
+		<input type="hidden" class="form-text" name="term"  value="1" required>
+		<tr>
+			<th>成绩</th><td><input type="text" class="form-text" name="score" value="{$score_info.score}" required>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" value="确认输入" class="form-btn">　<input type="reset" value="重新填写" class="form-btn"></td>
+		</tr>
+	</table>
+	</form>
+</div>
+<include file="Index/footer" />

@@ -1,0 +1,133 @@
+.clearfix:before { content: '\0020';display: block;height: 0;clear: both;}
+.clearfix:after {content: '\0020';display: block;height: 0;clear: both;visibility: hidden;}
+div{display: block;}
+.time-box {
+	padding: 30px;
+	background-color: #f3f3f3;
+	margin-top: 30px;
+	width: 1000px;
+	margin: 50px auto;
+}
+.time-all{float: left;}
+.time-all h3 {
+	font-size: 18px;
+	color: #14191e;
+	line-height: 20px;
+	text-align: left;
+	font-weight: 400;
+	font-family: "Microsoft YaHei";
+	margin-bottom: 40px;
+}
+.time-all em {
+	font-size: 48px;
+	color: #0088cc;
+	line-height: 20px;
+	text-align: left;
+	font-weight: 400;
+	font-family: "Microsoft YaHei";
+	margin-bottom: 20px;
+	font-style: normal;
+}
+.sort {float: right;}
+.sort p {
+	margin-top: 50px;
+    font-size: 18px;
+    color: #787d82;
+    text-align: right;
+    line-height: 20px;
+}
+.line {
+	position: relative;
+    left: 0;
+    top: 0;
+    width: 9999px;
+    height: 140px;
+    overflow: hidden;
+}
+.time-sort ul{ width: 9999px;padding-left: 75px;}
+.time-sort ul:before {
+	content: " ";
+    width: 70px;
+    height: 8px;
+    background-color: #d4d4d4;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+.time-sort li {
+	float: left;
+    width: 150px;
+    margin-top: 10px;
+    overflow: visible;
+    border-top: 8px solid #d4d4d4;
+    list-style: none;
+}
+.item-wrap {
+	position: relative;
+    left: -75px;
+    top: -14px;
+}
+.forward-status-icon:before {
+	content: ".";
+}
+.forward-status-icon {
+	position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+.icon-bg { 
+	width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-top: -15px;
+}
+.normal {background-color: transparent;}
+.forward-status-icon  .o:before {}
+.forward-status-icon  i {
+	position: absolute;
+    left: 65px;
+    top: 0px;
+    font-size: 20px;
+    color: #adadad;
+}
+.o_blue:before { content: "\e90a";}
+.o_blue {
+	color: #0088cc;
+	speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    display: none;
+}
+.timeNum {
+	margin-top: 10px;
+    font-size: 14px;
+    color: #b5b9bc;
+    line-height: 20px;
+    text-align: center;
+}
+.user-pic {
+	width: 40px;
+    height: 40px;
+    margin: 10px auto 0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.user-pic a {
+	display: block;
+	height: 100%;
+}
+.username {
+	margin-top: 10px;
+    text-align: center;
+}
+.username a {
+	font-size: 14px;
+    color: #14191e;
+}
+.line .active {border-color: #0088cc;}

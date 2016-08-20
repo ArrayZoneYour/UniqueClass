@@ -1,0 +1,25 @@
+<include file="Time/header" />
+<link rel="stylesheet" href="__PUBLIC__/css/student/updateInfo.css">
+<div class="main-table">
+	<div class="updateInfoForm">
+	<form method="post" id="updateInfoForm">
+		<div>
+			
+			<label for="">账号</label>
+			<input type="text" name="username" value="" oncontextmenu="return false" onpaste="return false" />
+		</div>
+		<div>
+			<label for="">密码</label>
+			<input type="text" name="password" value="" oncontextmenu="return false" onpaste="return false" />
+		</div>
+
+		
+		<button id="submit" type="submit">生成二维码</button>
+	</form>
+
+</div>
+</div>
+<div align="center">
+	{$QRcode}
+</div>
+<include file="Time/footer" />

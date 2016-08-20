@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+.table,.table th,.table td{border:1px solid #cfe1f9;}
+.table{border-bottom:#cfe1f9 solid 4px;border-collapse:collapse;line-height:38px;width:60%;margin:15px auto;}
+.table th{background:#eef7fc;color: #185697;padding:0 6px;}
+.table td{padding:0 12px;}
+.table tr:hover{background:#f5fcff;}
+.table-major{background:#fff;}
+</style>
+<link href="__PUBLIC__/css/Viewer/sign.css" rel='stylesheet' type='text/css' />
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=56157928" charset="UTF-8"></script>
+<meta name="" content="">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+</head>
+<body>
+<div class="main">
+	<div class="social-icons">
+		 <div class="col_1_of_f span_1_of_f"><a href="#">
+		    <ul class='sign'>
+		    	<i class="fb"> </i>
+		    	<li><a href="__MODULE__/Exam/sign">考试报名</a></li>
+		    	<div class='clear'> </div>
+		    </ul>
+		    </a>
+		 </div>	
+		 <div class="col_1_of_f span_1_of_f"><a href="#">
+		    <ul class='check'>
+		      <i class="tw"> </i>
+		      <li><a href="__MODULE__/Exam/check">四六级成绩查询</a></li>
+		      <div class='clear'> </div>
+		    </ul>
+		    </a>
+		</div>
+		<div class="clear"> </div>	
+      </div>
+		<form method="post">
+		   <div class="lable-2">
+		        <input type="text" class="text" value="学号" name="student_number" onFocus="if (this.value == '学号') {this.value = '';}" onBlur="if (this.value == '') {this.value = '学号';}" required>
+		   </div>
+		   <div class="lable-2">
+		        <input type="text" class="text" value="密码" name="password" onFocus="if (this.value == '密码') {this.value = '';}" onBlur="if (this.value == '') {this.value = '密码';}" required>
+		   </div>
+		   <div class="submit">
+			  <input type="submit" value="查询" onclick="login.check()">
+		   </div>
+		   <div class="clear"> </div>
+		</form>
+		<!---//end-main-->
+			
+		   <div class="clear"> </div>
+		</div>
+		<!---start-copyright-->
+		<!---//end-copyright-->
+<table class="table">
+	<tr><th>准考证号</th><th>总分</th><th>听力</th><th>阅读</th><th>作文+翻译</th></tr>
+	<notempty name="sign_info">
+		<foreach name="sign_info" item="v">
+			<tr align="center">
+				<td>{$v.cet_number}</td>
+				<td>{$v.score}</td>
+				<td>{$v.score_listen}</td>
+				<td>{$v.score_read}</td>
+				<td>{$v.score_write}</td>
+			</tr>
+		</foreach>
+		<tr align="center"><td colspan="6">信息有误请联系管理员QQ1208397343</td></tr>
+		<else/>
+		<tr align="center"><td colspan="6">查询的结果不存在！</td></tr>
+	</notempty>
+</table>
+</body>
+</html>
+<script src="__PUBLIC__/js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/dialog/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/dialog.js"></script>
+<script type="text/javascript">
+	var login = {
+	check : function(){
+		// 获取登录页面中的用户名和密码
+		var student_number = $('input[name="student_number"]').val();
+		var password = $('input[name="password"]').val();
+		var error = 1
+		if(student_number == "学号"){
+			dialog.error('学号不能为空！');
+			error = -1
+		}
+		if(password == "密码"){
+			dialog.error('密码不能为空！');
+			error = -1
+		}
+		var url = "check.html";
+		var data = {'student_number':student_number,'password':password}
+		// 执行异步请求 $.post
+		if(error){
+			$.post(url,data,function(result){
+			if(result.status == 0){
+				dialog.error(result.message);
+			}
+			if(result.status == 1){
+			}
+		},'JSON');
+		}
+		
+	}
+}
+</script>

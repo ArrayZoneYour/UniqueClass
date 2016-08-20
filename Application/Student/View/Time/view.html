@@ -1,0 +1,49 @@
+<include file="Time/header" />
+<link rel="stylesheet" href="__PUBLIC__/css/student/view.css">
+<div class="titbox">
+	<ul><li><a href="#">自习时间查看</a></li></ul>
+</div>
+<div class="main-table">
+<table class="table">
+	<tr><th>周次</th><th>周一</th><th>周二</th><th>周三</th><th>周四</th><th>周五</th><th>周六</th><th>周日</th></tr>
+	<notempty name="study_info">
+		<foreach name="study_info" item="v">
+			<tr align="center"><!-- var_dump($study_info) -->
+				<td>{$v.week}</td>
+				<td><?php echo $v['mon'] ?></td>
+				<td><?php echo $v['tue'] ?></td>
+				<td>{$v.wed}</td>
+				<td>{$v.thu}</td>
+				<td>{$v.fri}</td>
+				<td>{$v.sat}</td>
+				<td>{$v.sun}</td>
+			</tr>
+		</foreach>
+		<tr align="center">
+			<td>自习时间汇总</td>
+			<td>{$all_mon}</td>
+			<td>{$all_tue}</td>
+			<td>{$all_wed}</td>
+			<td>{$all_thu}</td>
+			<td>{$all_fri}</td>
+			<td>{$all_sat}</td>
+			<td>{$all_sun}</td>
+		</tr>
+		<else/>
+		<tr align="center"><td colspan="7">查询的结果不存在！</td></tr>
+		<tr>
+			<td colspan="8" align="center">
+				<button class="form-btn"><a href="__MODULE__/Time/input" type="submit">修改</a></button>
+			</td>
+		</tr>
+	</notempty>
+</table>
+<div class="submit">
+	<button class="form-btn"><a href="__MODULE__/Time/input">填写本周自习时间</a></button>
+	<button class="form-btn"><a href="__MODULE__/Time/inputLate">补填上周</a></button>
+	<button class="form-btn" type="submit">同步自习时间排行</button>
+</div>
+<!-- <img src="chart.php" alt=""> -->
+</div>
+<div class="blank"></div>
+<include file="Time/footer" />

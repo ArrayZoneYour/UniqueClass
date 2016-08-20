@@ -1,0 +1,27 @@
+<include file="Index/header" />
+<h2 class="main-right-nav">教学管理 &gt; 管理员管理</h2>
+<div class="main-right-titbox">
+	<ul><li><a href="#">管理员列表</a></li></ul>
+</div>
+<form method="post">请选择管理员权限等级：
+	<select name="admin_level">
+		<option value="1" <eq name="admin_level" value="1">selected</eq>>管理员</option>
+		<option value="2" <eq name="admin_level" value="2">selected</eq>>教师</option>
+	</select>
+	<input type="submit" value="确定" class="form-btn" />
+</form>
+<table class="table">
+	<tr><th>管理员id</th><th>管理员名</th><th>操作</th></tr>
+	<notempty name="admin_info">
+		<foreach name="admin_info" item="v">
+			<tr align="center">
+				<td>{$v.aid}</td>
+				<td>{$v.aname}</td>
+				<td><div align="center"><a href="__CONTROLLER__/update/aid/{$v.aid}">编辑</a>&nbsp;</div></td>
+			</tr>
+		</foreach>
+		<else/>
+		<tr align="center"><td colspan="5">查询的结果不存在！</td></tr>
+	</notempty>
+</table>
+<include file="Index/footer" />

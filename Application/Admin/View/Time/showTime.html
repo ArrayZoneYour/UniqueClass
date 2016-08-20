@@ -1,0 +1,58 @@
+<include file="Index/header" />
+<h2 class="main-right-nav">学生管理 &gt; 学生列表</h2>
+<div class="main-right-titbox">
+	<ul><li><a href="#">学生列表</a></li></ul>
+</div>
+<form method="post">请选择周次：
+	{$week}
+	选择排序方式：
+	<select name="order_first" id="">
+		<?php 
+		if($_POST[order_first] == time_all)
+		{
+			echo "<option value=\"time_all\">按自习时间排序</option><option value=\"student_number\">按学号排序</option>";
+		} else{
+			echo "<option value=\"student_number\">按学号排序</option><option value=\"time_all\">按自习时间排序</option>";
+		}
+		?>
+	</select>
+	<select name="order_second" id="">
+		<?php 
+		if($_POST[order_second] == desc)
+		{
+			echo "<option value=\"desc\">递减</option><option value=\"asc\">递增</option>";
+		} else{
+			echo "<option value=\"asc\">递增</option><option value=\"desc\">递减</option>";
+		}
+		?>
+	</select>
+	<input type="submit" value="确定" class="form-btn" />
+	<span>{$page}</span>
+</form>
+<table class="table">
+	<tr><th>学号</th><th>姓名</th><th>周一</th><th>周二</th><th>周三</th><th>周四</th><th>周五</th><th>周六</th><th>周日</th><th>周次</th><th>总时间</th></tr>
+	<notempty name="time_info">
+		<foreach name="time_info" item="v">
+			<tr align="center">
+				<td>{$v.student_number}</td>
+				<td>{$v.student_name}</td>
+				<td>{$v.mon}</td>
+				<td>{$v.tue}</td>
+				<td>{$v.wed}</td>
+				<td>{$v.thu}</td>
+				<td>{$v.fri}</td>
+				<td>{$v.sat}</td>
+				<td>{$v.sun}</td>
+				<td>{$v.week}</td>
+				<td>{$v.time_all}</td>
+			</tr>
+		</foreach>
+		<tr align="center">
+			<td colspan="12">{$page}</td>
+		</tr>
+		<tr align="center"><td colspan="12"><a href="../../../PHPExcel_demo/export_time.php">自习信息导出({$count}条数据)</a></td></tr>
+		<else/>
+		<tr align="center"><td colspan="12">查询的结果不存在！</td></tr>
+	</notempty>
+</table>
+<include file="Index/footer" />

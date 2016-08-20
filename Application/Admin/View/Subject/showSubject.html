@@ -1,0 +1,30 @@
+<include file="Index/header" />
+<h2 class="main-right-nav">教学系统 &gt; 科目管理</h2>
+<div class="main-right-titbox">
+	<ul><li><a href="#">科目列表</a></li></ul>
+</div>
+<form method="post">请选择班级：
+	<select name="class_id">
+		<foreach name="major_info" item="v">
+			<foreach name="v.Class" item="vv">
+				<option value="{$vv.class_id}" <eq name="class_id" value="$vv.class_id">selected</eq>>{$v.major_name}{$vv.class_name}</option>
+			</foreach>
+		</foreach>
+	</select>
+	<input type="submit" value="确定" class="form-btn" />
+</form>
+<table class="table">
+	<tr><th>科目编号</th><th>科目名</th></tr>
+	<notempty name="subject_info">
+		<foreach name="subject_info" item="v">
+			<tr align="center">
+				<td>{$v.subject_id}</td>
+				<td>{$v.subject_name}</td>
+			</tr>
+		</foreach>
+		<else/>
+		<tr align="center"><td colspan="5">查询的结果不存在！</td></tr>
+	</notempty>
+</table>
+<!-- <div><a href="__CONTROLLER__/add/class_id/{$class_id}" class="main-right-tita">添加学生</a></div> -->
+<include file="Index/footer" />

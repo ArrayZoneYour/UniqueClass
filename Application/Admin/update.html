@@ -1,0 +1,37 @@
+<include file="Index/header" />
+<h2 class="main-right-nav">个人信息 &gt; 密码修改</h2>
+<div class="main-right-titbox">
+	<ul><li><a href="#">密码修改</a></li></ul>
+</div>
+<div class="main-right-table">
+	<form method="post">
+	<table class="table">
+		<!-- <tr>
+			<th>管理员id</th>
+			<td><input type="hidden" name="aid" class="form-text" value="{$admin_info.aid}" /><br /></td>
+		</tr> -->
+		<tr>
+			<th>管理员名</th>
+			<input type="hidden" name="aid" class="form-text" value="{$admin_info.aid}" /><br />
+			<td><input type="text" name="aname" class="form-text" value="{$admin_info.aname}" /><br /></td>
+		</tr>
+		<tr>
+			<th>新的密码：</th>
+			<td><input type="password" name="apwd" id="pwd" class="form-text" value="{$admin_info.apwd}" /><br /></td>
+			<input type="hidden" name="admin_level" class="form-text" value="{$admin_info.admin_level}" />
+		</tr>
+		<!-- <tr>
+			<th>管理员权限</th>
+			<td><input type="text" name="admin_level" class="form-text" value="{$admin_info.admin_level}" /><br /></td>
+		</tr> -->
+		<tr>
+			<td colspan="2" align="center">
+				<input type="submit" value="修改密码" class="form-btn">
+				<input type="reset" value="重新填写" class="form-btn">
+			</td>
+		</tr>
+	</table>
+	</form>
+</div>
+<include file="Index/footer" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.12.0.min.js"></script>

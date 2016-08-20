@@ -1,0 +1,48 @@
+<include file="Time/header" />
+<link rel="stylesheet" href="__PUBLIC__/css/student/updateInfo.css">
+	<div class="titbox">
+		<ul><li><a href="#">第{$week}周自习时间录入</a></li></ul>
+	</div>
+<div class="main-table">
+	<form method="post" id="updateInfoForm">
+
+		<div>
+			<label for="">周一</label>
+			<input type="text" name="Mon" value="{$study_info.mon}" oncontextmenu="return false" onpaste="return false" />
+		</div>
+		<div>
+			<label for="">周二</label>
+			<input type="text" name="Tue" value="{$study_info.tue}" oncontextmenu="return false" onpaste="return false" />
+		</div>
+		<div>
+			<label for="">周三</label>
+			<input type="text" name="Wed" value="{$study_info.wed}" oncontextmenu="return false" onpaste="return false" />
+		</div>
+		<div>
+			<label for="">周四</label>
+			<input type="text" name="Thu" value="{$study_info.thu}" oncontextmenu="return false" onpaste="return false" />
+		</div>
+		<div>
+			<label for="">周五</label>
+			<input type="text" name="Fri" value="{$study_info.fri}" oncontextmenu="return false" onpaste="return false" />
+		</div>
+		<div>
+			<label for="">周六</label>
+			<input type="text" name="Sat" value="{$study_info.sat}" oncontextmenu="return false" onpaste="return false" />
+		</div>
+		<div>
+			<label for="">周日</label>
+			<input type="text" name="Sun" value="{$study_info.sun}" oncontextmenu="return false" onpaste="return false" />
+			<!-- <input type="hidden" name="id" class="form-text" value="{$study_info.id}" /> -->
+		</div>
+
+
+		<button id="submit" type="submit">确 认 修 改</button>
+	</form>
+</div>
+
+<!-- JS -->
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/student/updateInfo.js"></script>
+<script src="__PUBLIC__/js/student/jquery.validate.min.js"></script>
+<include file="Time/footer" />

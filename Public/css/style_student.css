@@ -1,0 +1,55 @@
+@charset "utf8";
+/* CSS Document */
+body,ul,div,img,h5,h4,h3,h2,h1,p,span,table,figure,i,li{ margin:0; padding:0}
+a:link, a:visited {text-decoration: none; } 
+img{ border:0}
+body{font-size:12px;background:#53A8BC url(../images/images_student/bg.jpg)  50% top scroll no-repeat;color:#5d5d5d; } 
+.blank{ height:60px; overflow:hidden; width:100%; margin:auto; clear:both}
+header{ padding:40px 0; width:1000px;  margin:auto; }
+header h1{ font-size:36px; text-shadow:#fff 1px 1px 1px; font-family:'Arizonia', cursive;} /* google  Arizonia */
+header h1 a{color:#000;-webkit-transition: all 0.5s; -moz-transition: all 0.5s; -o-transition: all 0.5s;}
+header h1 a:hover{ padding-left:20px}
+header p{margin:17px 0 0 0;/*text-shadow:#000*/ 1px 1px 1px;color:#fff}
+.nav{ position:relative; width:1000px; margin:auto;}
+#nav{ line-height:40px;width:1000px; height:40px;position: absolute;left:0px;top: 15px;}/*  rgba  */
+#nav ul{ list-style:none;text-align:left}
+#nav ul li{ display:inline; }
+#nav ul li a{color:#FFF;padding:15px 30px; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -o-transition: all 0.5s; -ms-transition: all 0.5s;}/*  */
+#nav ul li a:hover{ background:#E5B91C; color: #FFF; border-radius:50px 0;}
+#nav ul li a#nav_current { background:#9ACC99;border-radius:0 50px;} /*  */
+/* article */
+article{ width:1000px; margin:50px auto;overflow:hidden}
+.pho ul{ text-align:center; padding-left:50px}
+.pho ul li{width: 230px;height: 230px;border: 10px solid #f6f6f6;overflow: hidden;float: left;margin: 15px;-webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);-moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);box-shadow: 1px 1px 2px rgba(0,0,0,0.2);border-radius: 125px;-moz-border-radius: 125px;-webkit-border-radius: 125px;-webkit-transition: all 400ms linea;-moz-transition: all 400ms linear;-o-transition: all 400ms linear;-ms-transition: all 400ms linear;transition: all 400ms linear;display:inline; opacity:0.8}
+.pho ul li:hover{border-radius: 0; margin-left:40px;opacity:1}
+.blog{ color:#FFF; background:#73B6C6;border-radius: 20px;-moz-border-radius: 20px;-webkit-border-radius: 20px; overflow:hidden; margin:20px 0;}
+.blog h2{ color:#FFF; line-height:40px; height:40px; font-size:32px;font-family:'微软雅黑', cursive; padding-left:20px}
+.blog img{ float:left; clear:left; width:300px; border:#FFF 4px solid; margin: 0 20px 10px 10px}
+.title{ margin-bottom:20px;}
+.title a{ font-size:14px;color:#FFF; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -o-transition: all 0.5s; -ms-transition: all 0.5s; text-shadow:#3F7C9B 1px 1px 1px}
+.title a:hover{ padding-left:30px;}
+.blog ul{ padding:10px}
+.blog ul p{ line-height:24px; margin-bottom:15px}
+
+
+.titbox{margin-right: 15%;width:600px;background: url(./../images/bg_n.jpg) repeat-x bottom;overflow: hidden;padding: 20px 0 0 0;margin:15px auto;}
+.titbox_second{margin-right: 15%;width:600px;overflow: hidden;padding: 10px 0 0 0;margin:15px auto;}
+.titbox ul{list-style: none;margin:0;padding:0;}
+.titbox ul{float: left;cursor: pointer;line-height: 35px;}
+.titbox a{text-align: center;display: block;padding: 0 15px;background: #fff url(./../images/bgnav.jpg) repeat-x;font-weight: 700;overflow: hidden;border: 1px #1573b4 solid;border-bottom: 0;position: relative;bottom: -1px;font-size: 14px;color: #fff;}
+.main-table table{width:600px;}
+.main-table th{text-align:center;}
+
+.table,.table th,.table td{border:1px solid #cfe1f9;}
+.table{border-bottom:#cfe1f9 solid 4px;border-collapse:collapse;line-height:38px;width:100%;margin:15px auto;}
+.table th{background:#eef7fc;color: #185697;padding:0 6px;}
+.table td{padding:0 12px;}
+.table tr:hover{background:#f5fcff;}
+
+.submit .form-btn{border: 0px;}
+.form-btn{line-height: 26px;border: 1px #949494 solid;padding: 0 10px;cursor: pointer;background:#fff;margin-right:10px;}
+.form-text{border-top: 1px #999 solid;border-left: 1px #999 solid;border-bottom: 1px #ddd solid;border-right: 1px #ddd solid;padding: 3px;line-height: 18px;font-size: 13px;width:200px;}
+
+/* footer */
+#copright{ background:#2980B9;line-height:40px; height:40px; text-align:center; width:100%;color:#fff; font-family:'Arizonia', cursive; font-size:20px;}
+#copright a{color:#fff}

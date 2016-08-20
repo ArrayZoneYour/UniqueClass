@@ -1,0 +1,21 @@
+<include file="Index/header" />
+<h2 class="main-right-nav">教学系统 &gt; 成绩录入</h2>
+<div class="main-right-table">
+	<form method="post">
+	<table class="table">
+		<tr>
+			<th>学号：</th><td><input type="text" class="form-text" name="student_number" value="{$score_info.student_number}" required></td>
+		</tr>
+		<input type="hidden" class="form-text" name="term"  value="{$score_info.term}" required>
+		<input type="hidden" name="subject_id" value={$score_info.subject_id}>
+		<input type="hidden" name="id" value={$score_info.id}>
+		<tr>
+			<th>成绩</th><td><input type="text" class="form-text" name="score" value="{$score_info.score}" required>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" value="确认输入" class="form-btn">　<input type="reset" value="重新填写" class="form-btn"></td>
+		</tr>
+	</table>
+	</form>
+</div>
+<include file="Index/footer" />

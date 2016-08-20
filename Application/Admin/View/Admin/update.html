@@ -1,0 +1,64 @@
+<include file="Index/header" />
+<h2 class="main-right-nav">教务管理 &gt; 管理员信息更新</h2>
+<div class="main-right-titbox">
+	<ul><li><a href="#">管理员信息更新</a></li></ul>
+</div>
+<div class="main-right-table">
+	<form method="post">
+	<table class="table">
+		<tr>
+			<th>管理员名</th>
+			<input type="hidden" name="aid" class="form-text" value="{$admin_info.aid}" /><br />
+			<td><input type="text" name="aname" class="form-text" value="{$admin_info.aname}" /><br /></td>
+		</tr>
+		<tr>
+			<th>管理员身份</th>
+			<td>
+				<select name="admin_level" id="admin_level">
+					<option value="1" <eq name="admin_level" value="1">selected</eq>>管理员</option>
+					<option value="2" <eq name="admin_level" value="2">selected</eq>>教师</option>
+				</select>
+			</td>
+		</tr>
+		<tr id="subject" style="display: none">
+			<th>负责科目</th>
+			<td>
+				<select name="subject">
+					<foreach name="subject_info" item="v">
+						<option value="{$v.subject_id}" <eq name="subject_id" value="$v.subject_id">selected</eq>>{$v.subject_name}</option>
+					</foreach>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<th>新的密码：</th>
+			<td><input type="password" name="apwd" id="pwd" class="form-text" value="" /><br /></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<input type="submit" value="修改密码" class="form-btn">
+				<input type="reset" value="重新填写" class="form-btn">
+			</td>
+		</tr>
+	</table>
+	</form>
+</div>
+<include file="Index/footer" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.12.0.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#admin_level").change( function() {
+			var id = $("#admin_level").val();
+			console.log(id);
+			if(id == 1){
+				$.get('add.html', null, function(data) {
+					$("#subject").attr("style","display:none");
+				});
+			}else{
+				$.get('add.html', null, function(data) {
+					$("#subject").attr("style","");
+				});
+			}
+		})
+	})
+</script>

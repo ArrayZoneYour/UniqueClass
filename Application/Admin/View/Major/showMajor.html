@@ -1,0 +1,24 @@
+<include file="Index/header" />
+<h2 class="main-right-nav">院系专业 &gt; 专业列表</h2>
+<div class="main-right-titbox">
+	<ul><li><a href="#">专业列表</a></li></ul>
+</div>
+<table class="table">
+	 <tr><th>专业</th><th>班级</th><th>操作</th></tr>
+	 <notempty name="major_info">
+		<foreach name="major_info" item="v">
+			<foreach name="v.Class" item="vv" key="k">
+				<tr align="center">
+				<if condition="($k eq 0)">
+					<td rowspan="{$v.Class|count}" class="table-major">{$v.major_name}</td>
+				</if>
+				<td width="40%"><a href="__MODULE__/Student/showList/class_id/{$vv.class_id}">{$vv.class_name}</a></td>
+				<td><div align="center">编辑　删除</div></td>
+				</tr>
+			</foreach>
+		</foreach>
+		<else/>
+		<tr><td colspan="3">查询的结果不存在！</td></tr>
+	</notempty>
+</table>
+<include file="Index/footer" />

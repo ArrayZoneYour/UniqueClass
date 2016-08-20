@@ -1,0 +1,25 @@
+<include file="Time/header" />
+<!-- 自定义头像 -->
+<article>
+    <div class="pho">
+       <ul>
+          <li><img src="__PUBLIC__/images/images_student/default/01.jpg"></li>
+          <li><img src="__PUBLIC__/images/images_student/default/02.jpg"></li>
+          <li><img src="__PUBLIC__/images/images_student/{$pic}"></li>
+       </ul>    
+    </div>
+</article>
+<!-- 个人信息栏 -->
+<article>
+<div class="blog">
+      <h2>个人信息</h2> 
+      <ul>
+        <p>学号：{$_SESSION.student_number}</p>
+        <p>昵称：{$user_info['nickname']}</p>
+		    <p>个人签名：{$user_info['tag']}</p>
+        <p>上次登录：{$_SESSION.lastlogin|date='Y年m月d日 H:i:s',###}</p>
+      </ul>
+    </div>
+</div>
+</article>
+<include file="Time/footer" />

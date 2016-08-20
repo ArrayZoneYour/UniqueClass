@@ -1,0 +1,24 @@
+<include file="Index/header" />
+<h2 class="main-right-nav">学生管理 &gt; 学生列表</h2>
+<div class="main-right-titbox">
+	<ul><li><a href="#">未填写自习时间同学列表</a></li></ul>
+</div>
+<form method="post">请选择周次：
+	{$week}
+	<input type="submit" value="确定" class="form-btn" />
+	<span>{$page}</span>
+</form>
+<table class="table">
+	<tr><th>学号</th><th>姓名</th></tr>
+	<notempty name="timeNull">
+		<foreach name="timeNull" item="v">
+			<tr align="center">
+				<td>{$v.student_number}</td>
+				<td>{$v.student_name}</td>
+			</tr>
+		</foreach>
+		<else/>
+		<tr align="center"><td colspan="12">所有同学都已经填写完毕！</td></tr>
+	</notempty>
+</table>
+<include file="Index/footer" />

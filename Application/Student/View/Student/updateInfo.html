@@ -1,0 +1,24 @@
+<include file="Time/header" />
+<link rel="stylesheet" href="__PUBLIC__/css/student/updateInfo.css">
+<div class="main-table">
+	<div class="updateInfoForm">
+	<form method="post" id="updateInfoForm">
+		<div>
+			<input type="hidden" name="student_number" value="{$user_info.student_number}" />
+			<input type="hidden" name="student_name" value="{$user_info.student_name}">
+			<input type="hidden" name="password" value="{$user_info.password}" />
+			<label for="">昵&nbsp;称&nbsp;</label>
+			<input type="text" name="nickname" value="{$user_info.nickname}" oncontextmenu="return false" onpaste="return false" />
+		</div>
+		<div>
+			<label for="">个性签名</label>
+			<input type="text" name="tag" value="{$user_info.tag}" oncontextmenu="return false" onpaste="return false" />
+		</div>
+
+
+		<button id="submit" type="submit">确 认 修 改</button>
+	</form>
+
+</div>
+</div>
+<include file="Time/footer" />

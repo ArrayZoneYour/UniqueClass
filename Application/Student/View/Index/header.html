@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8">
+<title>{$user_info['student_name']}</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="__PUBLIC__/css/style_student.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="js/modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+<header>
+  <h1><a href="/">{$user_info['nickname']}</a></h1>
+  <p>个人签名</p>
+  <p>{$user_info['tag']}</p>
+</header>
+<div class="nav">
+<nav id="nav">
+     <ul>
+       <li><a href="__MODULE__/Student/userInfo">关于我</a></li>
+       <li><a href="__MODULE__/Time/view">自习之旅</a></li>
+       <!-- <li><a href="moodlist.html">碎言碎语</a></li> -->
+       <!-- <li><a href="newlist.html">问题探讨</a></li> -->
+       <!-- <li><a href="ablumlist.html">我的相册</a></li> -->
+       <!-- <li><a href="book.html">留言版</a></li> -->
+       <li><a href="__MODULE__/Student/updateInfo/student_number/{$_SESSION['student_number']}">个人信息修改</a></li>
+       <li><a href="__MODULE__/Student/updatePassword/student_number/{$_SESSION['student_number']}">修改密码</a></li>
+       <li><a href="__MODULE__/Index/logout">安全退出</a></li>
+     </ul>
+     <!-- <script src="js/silder.js"></script> -->
+     <!--获取当前页导航 高亮显示标题-->
+     <!-- 参考1049号模板 -->
+</nav>
+</div>
+<article></article>
+<!-- 空白站位article -->

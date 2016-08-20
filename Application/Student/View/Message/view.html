@@ -1,0 +1,29 @@
+<include file="Time/header" />
+<link rel="stylesheet" href="__PUBLIC__/css/student/view.css">
+<link rel="stylesheet" href="__PUBLIC__/css/student/MessageView.css">
+<div class="titbox">
+	<ul><li><a href="#">消息通知查看</a></li></ul>
+</div>
+<div class="main-table">
+<table class="table">
+	<tr><th>消息标题</th><th>发布时间</th><th>发布人</th><th>发布时间</th></tr>
+	<notempty name="message">
+		<foreach name="message" item="v">
+			<tr align="center">
+				<td>{$v.title}</td>
+				<td>{$v.posttime}</td>
+				<td>{$v.postname}</td>
+				<td>查看具体内容</td>
+			</tr>
+		</foreach>
+		<else/>
+		<tr align="center"><td colspan="4">当前没有通知</td></tr>
+	</notempty>
+</table>
+<div class="submit">
+	<button class="form-btn"><a href="__MODULE__/Message/add">发布消息</a></button>
+</div>
+<!-- <img src="chart.php" alt=""> -->
+</div>
+<div class="blank"></div>
+<include file="Time/footer" />

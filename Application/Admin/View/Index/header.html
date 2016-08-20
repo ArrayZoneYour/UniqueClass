@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<head>
+    <meta charset="utf-8">
+    <title>学生管理系统</title>
+	<link href="__PUBLIC__/css/style.css" rel="stylesheet">
+	<script type="text/javascript" src="http://tajs.qq.com/stats?sId=56157928" charset="UTF-8"></script>
+</head>
+<body>
+<div class="top">
+	<div class="top-box">
+		<h1 class="top-box-logo">学生管理系统</h1>
+		<div class="top-box-nav">
+			欢迎您！<a href="">我的信息</a> <a href="" onclick="javascript:if(confirm('开发中')){return true;}return false;">密码修改</a> <a href="__MODULE__/Index/logout">安全退出</a>
+		</div>
+		<!--  -->
+	</div>
+</div>
+<div class="main">
+	<div class="main-left">
+		<div class="main-left-nav">
+			<div class="main-left-nav-head">
+				<strong>院系专业</strong><div></div>
+			</div>
+			<a href="__MODULE__/Major/showMajor">专业列表</a>
+
+			<div class="main-left-nav-head">
+				<strong>学生录入</strong><div></div>
+			</div>
+			<div class="main-left-nav-list">
+				<div><a href="__MODULE__/Student/showList">学生列表</a></div>
+				<div><a href="__MODULE__/Student/add">添加学生</a></div>
+				<div><a href="__MODULE__/Student/addAll">批量添加</a></div>
+				<div><a href="__MODULE__/Student/upload">资料上传</a></div>
+			</div>
+			<div class="main-left-nav-head">
+				<strong>学习成绩信息</strong><div></div>
+			</div>
+			<div class="main-left-nav-list">
+				<div><a href="__MODULE__/Time/showTime">自习时间查看</a></div>
+				<div><a href="__MODULE__/Time/timeNull">自习未填写名单</a></div>
+				<div><a href="__MODULE__/Subject/showSubject">科目管理</a></div>
+				<div><a href="__MODULE__/Score/showScore">成绩查看</a></div>
+				<div><a href="__MODULE__/Score/add">成绩录入</a></div>
+				<div><a href="__MODULE__/Score/addAll">批量录入</a></div>
+			</div>
+			<div class="main-left-nav-head">
+				<strong>教务管理</strong><div></div>
+			</div>
+			<div>
+				<div><a href="__MODULE__/Admin/showAdmin">管理员管理</a></div>
+				<div><a href="__MODULE__/Admin/add">添加管理员</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="main-right">
