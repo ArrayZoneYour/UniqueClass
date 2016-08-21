@@ -48,4 +48,32 @@ class IndexController extends Controller{
 		session(null);
 		$this->success('退出成功。',U('login'));
 	}
+
+    public function APPLogin() {
+        header("Access-Control-Allow-Origin: *");
+        $student_number = $_GET['student_number'];
+        $password = $_GET['password'];
+        if(!trim($student_number)){
+            $data['status'] = 0;
+            return $this->AjaxReturn($data);
+        }
+        if(!trim($password)){
+            $data['status'] = 0;
+            return $this->AjaxReturn($data);
+        }
+        $data = D('Index')->getDataByStudentNumber($student_number);
+        if(!$data){
+            $data['status'] = 0;
+            return $this->AjaxReturn($data);
+        }
+        if($data['password'] != getMd5Password($password)){
+            $data = [];
+            $data['status'] = 0;
+            return $this->AjaxReturn($data);
+        }
+        $data['status'] = 1;
+        $this->AjaxReturn($data);
+        $data['lastlogin'] = time();
+
+    }
 }
