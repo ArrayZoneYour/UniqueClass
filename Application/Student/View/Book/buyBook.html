@@ -1,0 +1,26 @@
+<include file="Time/header" />
+<link rel="stylesheet" href="__PUBLIC__/css/student/view.css">
+<link rel="stylesheet" href="__PUBLIC__/css/student/MessageView.css">
+<div class="titbox">
+	<ul><li><a href="#">书籍订购</a></li></ul>
+</div>
+<div class="main-table">
+<table class="table">
+	<tr><th>书名</th><th>价格</th><th>订购</th></tr>
+	<notempty name="books">
+		<foreach name="books" item="v">
+			<tr align="center">
+				<td>{$v.subject_name}</td>
+				<td>{$v.price}</td>
+				<td attr-id="buy">暂不开放</td>
+			</tr>
+		</foreach>
+		<else/>
+		<tr align="center"><td colspan="4">当前没有通知</td></tr>
+	</notempty>
+</table>
+<!-- <img src="chart.php" alt=""> -->
+</div>
+<div class="blank"></div>
+<include file="Time/footer" />
+<script src="__PUBLIC__/js/jquery-1.12.0.min.js"></script>

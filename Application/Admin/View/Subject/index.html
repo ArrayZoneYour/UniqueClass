@@ -1,0 +1,19 @@
+<include file="Index/header" />
+<h2 class="main-right-nav">科目管理 &gt; 科目列表</h2>
+<div class="main-right-titbox">
+	<ul><li><a href="#">科目列表</a></li></ul>
+</div>
+<table class="table">
+	<tr><th>科目名</th><th>是否可订购</th>
+	<notempty name="subject">
+		<foreach name="subject" item="v">
+			<tr align="center">
+				<td>{$v.subject_name}</td>
+				<td>{$v.can_book}</td>
+			</tr>
+		</foreach>
+		<else/>
+		<tr align="center"><td colspan="5">查询的结果不存在！</td></tr>
+	</notempty>
+</table>
+<include file="Index/footer" />

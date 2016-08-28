@@ -9,4 +9,26 @@ class SubjectModel extends RelationModel{
             //表示与class表进行关联，与class表的关系是多对多
             'Class' => self::MANY_TO_MANY,
     );
+
+    public function getAll() {
+        return $this->select();
+    }
+
+    public function addOne($data) {
+        if($data){
+            return $this->add($data);
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function updateOne($data) {
+        if($data) {
+            return $this->save($data);
+        }
+        else{
+            return false;
+        }
+    }
 }

@@ -9,6 +9,12 @@ class SubjectController extends Controller{
 			$this->error('非法用户，请先登录！', U('Index/login'));
 		}
 	}
+
+    public function index() {
+        $subject = D('Subject')->getAll();
+        $this->assign('subject', $subject);
+        $this->display();
+    }
 	//科目列表展示功能
     public function showSubject() {
         //实例化Student模型对象
@@ -39,5 +45,33 @@ class SubjectController extends Controller{
         $this->assign('major_info', $major_info);
         //显示视图
         $this->display();
+    }
+
+    public function add() {
+        if(IS_POST) {
+            $data = I('post.');
+            $condition = D('Subject')->addOne($data);
+            if($condition) {
+                return $this->redirect('Subject/ShowSubject');
+            }
+            else{
+                return $this->error("添加失败！");
+            }
+        }
+        $this->display();
+    }
+
+    public function update() {
+        if(IS_POST) {
+            $data = I('post.');
+            $condition = D('Subject')->update($data);
+            if($condition) {
+                return $this->redirect('Subject/Index');
+            }
+            else{
+                return $this->error("更新失败！");
+            }
+            $this->display();
+        }
     }
 }
