@@ -30,7 +30,14 @@ var dialog = {
             },
         });
     },
-
+    // 无需跳转到指定页面的成功弹出层
+    successconfirm : function(message) {
+        layer.open({
+            content : message,
+            icon:1,
+            btn : ['确定'],
+        });
+    },
     //无需跳转到指定页面的确认弹出层
     toconfirm : function(message) {
         layer.open({

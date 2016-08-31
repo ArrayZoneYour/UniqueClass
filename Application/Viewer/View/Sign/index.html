@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>学业发展支持中心招新</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/party/bootstrap-switch.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/party/uploadify.css">
+    <style>
+        body {
+            background-color: #c3f1c3;
+        }
+    </style>
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/js/validator.js"></script>
+    <script src="__PUBLIC__/js/dialog/layer.js"></script>
+    <script src="__PUBLIC__/js/dialog.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/party/jquery.uploadify.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h3 class="text-center">2016年秋季光学与电子信息学院学业发展支持中心招新报名表</h3>
+        </header>
+        <section class="sign">
+            <form id="myForm" data-toggle="validator" role="form" class="form-horizontal col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8">
+                <div class="form-group  has-feedback">
+                    <label for="input-name" class="control-label">尊姓大名</label>
+                    <input type="text" class="form-control input" name="name" id="input-name" placeholder="姓名" data-error="该项必填" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label for="input-sex" class="control-label">性别</label>
+                    <input type="radio" name="sex" id="boyRadio" value="1" checked>帅锅
+                    <input type="radio" name="sex" id="girlRadio" value="2" checked>美铝
+                </div>
+                <div class="form-group">
+                    <label for="input-class"  class="control-label">班级</label>
+                    <input type="text" id="input-class" class="form-control" data-error="该项必填" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label for="input-birthday" class="control-label">生日</label>
+                    <input type="date" id="input-birthday" class="form-control" value="" data-error="该项必填" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label for="input-phone" class="control-label">电话</label>
+                    <input type="tel" id="input-phone" class="form-control" value="" data-error="该项必填" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label for="input-QQ" class="control-label">QQ</label>
+                    <input type="text" id="input-QQ" class="form-control" value="" data-error="该项必填" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label for="input-aspiration-first">第一志愿</label>
+                    <select class="form-control" id="input-aspiration-first">
+                        <option value="">请选择</option>
+                        <option value="1">学习活动部</option>
+                        <option value="2">学业辅导部</option>
+                        <option value="3">办公室</option>
+                        <option value="4">文宣部</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="input-aspiration-second">第二志愿</label>
+                    <select class="form-control" id="input-aspiration-second">
+                        <option value="">请选择</option>
+                        <option value="1">学习活动部</option>
+                        <option value="2">学业辅导部</option>
+                        <option value="3">办公室</option>
+                        <option value="4">文宣部</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="input-pic">照片（如果上传照片请使用支持flash的浏览器）</label>
+                        <input id="file_upload"  type="file" multiple="true" >
+                        <img style="display: none" id="upload_org_code_img" src="" width="150" height="150">
+                        <input id="file_upload_image" name="thumb" type="hidden" multiple="true" value="">
+                </div>
+                <div class="form-group">
+                    <label for="input-specialty" class="control-label">你的特长</label>
+                    <textarea class="form-control" id="input-specialty" rows="2" data-error="该项必填" required></textarea>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label for="input-gain" class="control-label">你觉得加入学业发展支持中心可以收获到什么？（最少三点）</label>
+                    <textarea class="form-control" id="input-gain" rows="6" data-error="该项必填" required></textarea>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label for="input-suggestion" class="control-label">你对学业发展支持中心的第一印象是什么？对中心或部门有没有什么好的意见和建议？</label>
+                    <textarea class="form-control" id="input-suggestion" rows="6" data-error="该项必填" required></textarea>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group text-center">
+                    <button type="button" id="submit" class="btn btn-lg btn-success">报名</button>
+                </div>
+            </form>
+        </section>
+        <div class="clearfix"></div>
+        
+        
+    </div>
+    <script>
+        var SCOPE = {
+            'ajax_upload_image_url' : '{:U('Image/Ajaxuploadimage')}',
+            'ajax_upload_swf' : '__PUBLIC__/js/party/uploadify.swf',
+        };
+        
+    </script>
+    <script src="__PUBLIC__/js/image.js"></script>
+    <script>
+        $('#myForm').validator().on('button')
+        $("#submit").click(function(){
+            var name = $("#input-name").val();
+            var sex = $("[name='sex']").val();
+            var Myclass = $("#input-class").val();
+            var birthday = $("#input-birthday").val();
+            var phone = $("#input-phone").val();
+            var QQ = $("#input-QQ").val();
+            var aspiration_first = $("#input-aspiration-first").val();
+            var aspiration_second = $("#input-aspiration-second").val();
+            var pic = $("#file_upload_image").val();
+            var specialty = $("#input-specialty").val();
+            var gain = $("#input-gain").val();
+            var suggestion = $("#input-suggestion").val();
+            var data = {pic:pic, QQ:QQ, class:Myclass, name:name, sex:sex, birthday:birthday, phone:phone, aspiration_first: aspiration_first, aspiration_second:aspiration_second, pic:pic, specialty:specialty, gain:gain, suggestion:suggestion}
+            console.log(data);
+            $.post('', data, function(result){
+                console.log(result);
+                if(result.status == 1) {
+                    dialog.success(result.message, "search.html");
+                }else{
+                    dialog.error(result.message);
+                }
+            },'JSON');
+        })
+    </script>
+</body>
+</html>

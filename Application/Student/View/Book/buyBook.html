@@ -1,6 +1,7 @@
 <include file="Time/header" />
 <link rel="stylesheet" href="__PUBLIC__/css/student/view.css">
 <link rel="stylesheet" href="__PUBLIC__/css/student/MessageView.css">
+<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <div class="titbox">
 	<ul><li><a href="#">书籍订购</a></li></ul>
 </div>
@@ -10,17 +11,42 @@
 	<notempty name="books">
 		<foreach name="books" item="v">
 			<tr align="center">
-				<td>{$v.subject_name}</td>
+				<td attr-id="{$v.book_id}">{$v.book_name}</td>
 				<td>{$v.price}</td>
-				<td attr-id="buy">暂不开放</td>
+				<td attr-id="buy" class="ion-ios-cart"></td>
 			</tr>
 		</foreach>
 		<else/>
 		<tr align="center"><td colspan="4">当前没有通知</td></tr>
 	</notempty>
+	<empty name="price">
+		<tr align="center"><td colspan="4">没有购买的书籍信息</td></tr>
+	</empty>
 </table>
+<div class="submit">
+	<button attr-name="confirm" class="form-btn">确认购买的书籍信息</button>
+</div>
 <!-- <img src="chart.php" alt=""> -->
 </div>
 <div class="blank"></div>
 <include file="Time/footer" />
-<script src="__PUBLIC__/js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/dialog/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/dialog.js"></script>
+<script>
+	$("[attr-id='buy']").click(function() {
+		var book_id = $(this).parent().children("td:first").attr("attr-id");
+		data = {book_id: book_id}
+		// console.log(data);
+		$.post('api', data, function(result){
+			console.log(result);
+			if(result.status == 1){
+				dialog.successconfirm(result.message)
+			}
+		},'JSON')
+	});
+	$("[attr-name='confirm']").click(function(){
+		var confirm = 1;
+		data = {confirm : 1}
+	});
+</script>
