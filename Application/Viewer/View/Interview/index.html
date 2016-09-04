@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>招新</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" charset="UTF-8" href="__PUBLIC__/css/normalize.css">
+	<link rel="stylesheet" charset="UTF-8" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        body{
+            padding-top:5rem;
+    }
+    </style>
+    
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">招新</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="?id=1">学习部</a></li>
+            <li><a href="?id=2">学业辅导部</a></li>
+            <li><a href="?id=3">文宣部</a></li>
+            <li><a href="?id=4">办公室</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+<!--<?php dump($signers); ?>-->
+    <div class="container">
+        <h4>第一志愿：</h4>
+        <volist name='signers_first' id="signer">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#{$signer.id}">{$signer.class} {$signer.name} </a>
+                    </h4>
+                </div>
+                <div id="{$signer.id}" class="panel-body panel-collapse collapse">
+                    <ul class="list-group">
+                        <li class="list-group-item">性别：{$signer.sex|sex}</li>
+                        <li class="list-group-item">生日：{$signer.birthday}</li>
+                        <li class="list-group-item">QQ：{$signer.qq}</li>
+                        <li class="list-group-item">电话：{$signer.phone}</li>
+                        <li class="list-group-item">第一志愿：{$signer.aspiration_first|aspirstion_oeistudy}</li>
+                        <li class="list-group-item">第二志愿：{$signer.aspiration_second|aspirstion_oeistudy}</li>
+                        <li class="list-group-item">特长：{$signer.specialty}</li>
+                        <li class="list-group-item"><p>觉得加入学业发展支持中心可以收获到：</p>{$signer.gain}</li>
+                        <li class="list-group-item"><p>对学业发展支持中心的第一印象，对中心或部门的意见和建议：</p>{$signer.suggestion}</li>
+                    </ul>
+                </div>
+            </div>
+        </volist>
+        <h4>第二志愿：</h4>
+        <volist name='signers_second' id="signer">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#{$signer.id}">{$signer.class} {$signer.name} </a>
+                    </h4>
+                </div>
+                <div id="{$signer.id}" class="panel-body panel-collapse collapse">
+                    <ul class="list-group">
+                        <li class="list-group-item">性别：{$signer.sex|sex}</li>
+                        <li class="list-group-item">生日：{$signer.birthday}</li>
+                        <li class="list-group-item">QQ：{$signer.qq}</li>
+                        <li class="list-group-item">电话：{$signer.phone}</li>
+                        <li class="list-group-item">第一志愿：{$signer.aspiration_first|aspirstion_oeistudy}</li>
+                        <li class="list-group-item">第二志愿：{$signer.aspiration_second|aspirstion_oeistudy}</li>
+                        <li class="list-group-item">特长：{$signer.specialty}</li>
+                        <li class="list-group-item"><p>觉得加入学业发展支持中心可以收获到：</p>{$signer.gain}</li>
+                        <li class="list-group-item"><p>对学业发展支持中心的第一印象，对中心或部门的意见和建议：</p>{$signer.suggestion}</li>
+                    </ul>
+                </div>
+            </div>
+        </volist>
+    </div>
+</div>
+</body>
+</html>

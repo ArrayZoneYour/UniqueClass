@@ -33,8 +33,12 @@ class SignController extends Controller {
             if(!isset($_POST['suggestion']) || !$_POST['suggestion']) {
                 return show(0,'信息不全');
             }
-            $menuId = M("Sign")->add($_POST);
-            if($menuId) {
+            $signStatus = D('Sign')->checkSign();
+            if($signStatus){
+                return show(0, '您已经报名成功，请勿多次报名');
+            }
+            $id = M("Sign")->add($_POST);
+            if($id) {
                 if(!isset($_POST['pic']) || !$_POST['pic']) {
                     return show(1, '报名成功但照片上传失败（可能是浏览器不支持flash）');
                 }

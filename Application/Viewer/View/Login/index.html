@@ -1,0 +1,63 @@
+<?php 
+$url_check = U('Login/Check'); 
+$url_index = U('Index/Index');
+$password = md5('SnowFlyAgain');
+?>
+<script type="text/javascript">
+	var url_check = "{$url_check}"
+	var url_index = "{$url_index}"
+    var pmd = "{$password}"
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>华中科技大学选课系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" charset="UTF-8" href="__PUBLIC__/css/normalize.css">
+	<link rel="stylesheet" charset="UTF-8" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" charset="UTF-8" href="__PUBLIC__/css/common.css">
+	<link rel="stylesheet" charset="UTF-8" href="__PUBLIC__/css/login.css">
+</head>
+<body>
+<!--[if lte IE 8]>
+<p class="browserupgrade">您的浏览器版本太老了, 请到 <a href="http://browsehappy.com/">这里</a> 更新, 以获取最佳的体验</p>
+<![endif]-->
+<section class="welcome">
+	<h2>欢迎登录</h2>
+	<p>华中科技大学光电信息学院学业发展支持中心招新</p>
+</section>
+<div class="form-login clearfix">
+	<form action="">
+		<div class="input-group col-sm-6">
+			<input type="text" class="form-control" name="username" placeholder="请输入用户名">
+			<div class="input-group-addon">
+				<span class="glyphicon glyphicon-user"></span>
+			</div>
+		</div>
+		<div class="input-group col-sm-6">
+			<input type="password" class="form-control" name="password"  placeholder="请输入密码">
+			<div class="input-group-addon">
+				<span class="glyphicon glyphicon-lock"></span>
+			</div>
+		</div>
+	</form>
+	<div class="form-submit">
+			<button class="btn btn-success" onclick="login.check()">登录</button>
+	</div>
+</div>
+<footer>
+	<div>
+		<p>华中科技大学光电信息学院 版权所有 ® 2016-</p>
+		<p>技术支持 LYD QQ：1208397343</p>
+	</div>
+</footer>
+</body>
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/bootstrap/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/dialog/layer.js"></script>
+<script src="__PUBLIC__/js/dialog.js"></script>
+<script src="__PUBLIC__/js/login.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+</html>

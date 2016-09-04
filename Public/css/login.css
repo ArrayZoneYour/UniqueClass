@@ -1,0 +1,47 @@
+/*登录页头部*/
+
+.welcome{
+	width: 100%;
+}
+
+.welcome h2,
+.welcome p {
+	display: block;
+	margin-top: 3%;
+	text-align: center;
+}
+
+/* 登录页表单 */
+.form-login {
+	width: 80%;
+	margin: 0 auto;
+	max-width: 800px;
+	text-align: center;
+}
+
+.form-login .input-group{
+	margin: 5% auto;
+}
+
+.form-login .input-group-addon {
+	width: 2rem;
+}
+
+.form-submit {
+	
+	/*border-radius: 2rem;*/
+}
+
+.form-submit button {
+	margin: 0 auto;
+	width: 96%;
+	max-width:330px;
+}
+
+/* 登录页底部 */
+
+footer {
+	margin-top: 10%;
+	width: 96%;
+	text-align: center;
+}

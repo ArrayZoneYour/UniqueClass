@@ -18,3 +18,12 @@ function getMd5Password($password) {
 	// return md5($password , C('MD5_PRE'));
 	return md5($password);
 }
+
+function sex($id) {
+	return ($id==1)?"男":"女";
+}
+
+function aspirstion_oeistudy($id) {
+	$Arr = array("","学习部","学业辅导部","办公室","文宣部");
+	return $Arr[$id];
+}
