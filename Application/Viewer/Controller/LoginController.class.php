@@ -6,7 +6,7 @@ class LoginController extends Controller {
 
     public function index(){
     	if (session('adminUser')) {
-    		redirect(U('Index/Index'));
+    		redirect(U('Interview/Index'));
     	}
     	// $res = D('admin')->getAdminByUsername('admin');
     	// print_r($res);
@@ -32,7 +32,7 @@ class LoginController extends Controller {
     	}
 
     	if($ret['apwd'] != md5($password)) {
-    		return show(0,'密码错误',$ret);
+    		return show(0,'密码错误');
     	}
 
     	session('adminUser', $ret);
